@@ -1,0 +1,62 @@
+/* App.css */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.App-header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.App-header nav ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.App-header nav ul li {
+  float: none;
+}
+
+.App-header nav ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.App-footer {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+  margin-top: auto;
+}
+.App-header .search-container {
+  margin-left: auto;
+}
+
+.App-header .search-container input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.App-header .username-display {
+  margin-left: 20px;
+  color: white;
+}
+
+.App-header .search-container,
+.App-header .username-display {
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,70 @@
+/* File: Login.css */
+.container_login {
+  margin: 0;
+  padding: 0;
+  background: url('../asset/login.jpg') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ 
+.Login {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: rgba(248, 248, 248, 0.8); /* Adjust the opacity as needed */
+}
+
+.Login h1 {
+  text-align: center;
+  color: #333;
+}
+
+.Login form {
+  display: flex;
+  flex-direction: column;
+}
+
+.Login label {
+  margin-top: 10px;
+}
+
+.Login input[type="email"], .Login input[type="password"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.Login button {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
+}
+
+.Login button:hover {
+  background-color: #0056b3;
+}
+
+.Login .btn-signup {
+  display: inline-block;
+  margin-top: 10px;
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.Login .btn-signup:hover {
+  text-decoration: underline;
+}
+
+.Login span {
+  color: red;
+  font-size: 12px;
+}

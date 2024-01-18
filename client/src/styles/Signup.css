@@ -1,0 +1,73 @@
+.container_signup{
+  margin: 0;
+  padding: 0;
+  background: url('../asset/login.jpg') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.Signup {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: rgba(248, 248, 248, 0.8);
+  /* Adjust the opacity as needed */
+}
+
+.Signup h1 {
+  text-align: center;
+  color: #333;
+}
+
+.Signup form {
+  display: flex;
+  flex-direction: column;
+}
+
+.Signup label {
+  margin-top: 10px;
+}
+
+.Signup input[type="text"],
+input[type="email"],
+input[type="password"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.Signup button {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
+}
+
+.Signup button:hover {
+  background-color: #0056b3;
+}
+
+.Signup btn-signup {
+  display: inline-block;
+  margin-top: 10px;
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.Signup btn-signup:hover {
+  text-decoration: underline;
+}
+
+.Signup span {
+  color: red;
+  font-size: 12px;
+}

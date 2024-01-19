@@ -57,4 +57,16 @@ exports.getByUserId = (req, res) => {
         } else res.send(data);
     });
 };
+exports.createStudentWithUserId = (req, res) => {
+    const student = new Student({
+        name: req.body.name,
+        email: req.body.email,
+        classname: req.body.classname,
+    });
+
+    Student.createWithUserId(student, req.params.userId, (err, data) => {
+        if (err) res.status(500).send({ message: err.message || "Some error occurred while creating the Student." });
+        else res.send(data);
+    });
+};
 module.exports = exports;

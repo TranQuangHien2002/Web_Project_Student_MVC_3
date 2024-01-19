@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState} from "react";
 import React from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
@@ -12,13 +12,15 @@ function CreateStudent() {
 
   function handleSubmit(event) {
     event.preventDefault();
+    const userId = localStorage.getItem('userId');
     const newStudent = {
       name,
       email,
       classname,
+      ID : userId,
     };
     axios
-      .post("http://localhost:8082/api/students/create", newStudent)
+      .post(`http://localhost:8082/api/students/create/${userId}`, newStudent)
       .then((res) => {
         console.log("success");
         navigate("/about");

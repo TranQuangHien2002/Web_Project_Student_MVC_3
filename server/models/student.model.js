@@ -82,4 +82,17 @@ Student.getByUserId = (userId, result) => {
         result(null, res);
     });
 };
+Student.createWithUserId = (newStudent, userId, result) => {
+    newStudent.ID = parseInt(userId);
+    sql.query("INSERT INTO student SET ?", newStudent, (err, res) => {
+        if (err) {
+            console.log("error: ", err);
+            result(err, null);
+            return;
+        }
+
+        console.log("created student: ", { id_student: res.insertId, ...newStudent });
+        result(null, { id_student: res.insertId, ...newStudent });
+    });
+};
 module.exports = Student;

@@ -3,25 +3,23 @@ import React from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import "../styles/crudStudent.css";
-
-function CreateStudent() {
+import "../styles/room.css";
+function CreateRoom() {
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [classname, setClassname] = useState("");
+  const [infor, setInfor] = useState("");
   const navigate = useNavigate();
 
   function handleSubmit(event) {
     event.preventDefault();
-    const newStudent = {
+    const newRoom = {
       name,
-      email,
-      classname,
+      infor,
     };
     axios
-      .post("http://localhost:8082/api/students/create", newStudent)
+      .post("http://localhost:8082/api/rooms/create", newRoom)
       .then((res) => {
         console.log("success");
-        navigate("/about");
+        navigate("/home");
       })
       .catch((err) => {
         console.log(err);
@@ -51,7 +49,7 @@ function CreateStudent() {
       <div className="container-crud">
         <div className="form-div">
           <form onSubmit={handleSubmit}>
-            <h2>Add Student</h2>
+            <h2>Add Room</h2>
             <div className="box-crud">
               <label>Name</label>
               <input
@@ -61,19 +59,11 @@ function CreateStudent() {
               />
             </div>
             <div className="box-crud">
-              <label>Email</label>
-              <input
-                type="email"
-                placeholder="Enter Email"
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-            <div className="box-crud">
-              <label>Class</label>
+              <label>Room</label>
               <input
                 type="text"
-                placeholder="Enter Class"
-                onChange={(e) => setClassname(e.target.value)}
+                placeholder="Enter Room"
+                onChange={(e) => setInfor(e.target.value)}
               />
             </div>
             <button type="submit" className="btn-submit">
@@ -89,4 +79,4 @@ function CreateStudent() {
   );
 }
 
-export default CreateStudent;
+export default CreateRoom;

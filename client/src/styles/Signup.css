@@ -1,14 +1,13 @@
-.container_signup{
+.container_signup {
   margin: 0;
   padding: 0;
-  background: url('../asset/login.jpg') no-repeat center center fixed;
+  background: url("../asset/login.jpg") no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 
 .Signup {
   width: 300px;
@@ -17,7 +16,6 @@
   border: 1px solid #ccc;
   border-radius: 10px;
   background-color: rgba(248, 248, 248, 0.8);
-  /* Adjust the opacity as needed */
 }
 
 .Signup h1 {
@@ -47,7 +45,7 @@ input[type="password"] {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background-color: #007BFF;
+  background-color: #007bff;
   color: white;
   cursor: pointer;
 }
@@ -59,7 +57,7 @@ input[type="password"] {
 .Signup btn-signup {
   display: inline-block;
   margin-top: 10px;
-  color: #007BFF;
+  color: #007bff;
   text-decoration: none;
 }
 

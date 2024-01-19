@@ -6,8 +6,9 @@ function Student() {
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
+    const userId = localStorage.getItem('userId');
     axios
-      .get("http://localhost:8082/api/")
+      .get(`http://localhost:8082/api/students/${userId}`)
       .then((res) => {
         setStudents(res.data);
       })
@@ -18,7 +19,7 @@ function Student() {
 
   const handleDelete = async (id_student) => {
     try {
-      await axios.delete(`http://localhost:8082/api/${id_student}`);
+      await axios.delete(`http://localhost:8082/api/students/${id_student}`);
       window.location.reload();
     } catch (err) {
       console.log(err);

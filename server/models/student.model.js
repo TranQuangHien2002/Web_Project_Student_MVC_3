@@ -8,7 +8,7 @@ const Student = function(student) {
 };
 
 Student.getAll = result => {
-    sql.query("SELECT * FROM student", (err, res) => {
+    sql.query("SELECT * FROM student ", (err, res) => {
         if (err) {
             console.log("error: ", err);
             result(null, err);
@@ -71,5 +71,15 @@ Student.remove = (id_student, result) => {
         result(null, res);
     });
 };
-
+Student.getByUserId = (userId, result) => {
+    sql.query("SELECT * FROM student WHERE id = ?", [userId], (err, res) => {
+        if (err) {
+            console.log("error: ", err);
+            result(null, err);
+            return;
+        }
+        console.log("students: ", res);
+        result(null, res);
+    });
+};
 module.exports = Student;

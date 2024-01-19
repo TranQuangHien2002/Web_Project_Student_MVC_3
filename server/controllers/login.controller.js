@@ -16,7 +16,7 @@ exports.login = (req, res) => {
       return res.json("Error");
     }
     if (data.length > 0) {
-      return res.json("Success");
+      return res.json({ status: "Success", userId: data[0].ID }); // return user ID
     } else {
       return res.json("Fail");
     }

@@ -3,26 +3,24 @@ import React  from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useParams } from 'react-router-dom';
-
-function UpdateStudent() {
+import "../styles/room.css";
+function UpdateRoom() {
     const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [classname, setClassname] = useState("");
+    const [infor, setInfor] = useState("");
     const {id} = useParams();
 
     const navigate = useNavigate();
 
     function handleSubmit(event) {
         event.preventDefault();
-        const newStudent = {
+        const newRoom = {
             name,
-            email,
-            classname,
+            infor,
         };
-        axios.put(`http://localhost:8082/api/students/update/${id}`, newStudent)
+        axios.put(`http://localhost:8082/api/rooms/update/${id}`, newRoom)
         .then(res => {
             console.log("success");
-            navigate("/about");
+            navigate("/home");
         }).catch(err => {
             console.log(err);
         })
@@ -32,22 +30,16 @@ function UpdateStudent() {
     <div className="container-crud">
       <div className="form-div">
         <form onSubmit={handleSubmit}>
-          <h2>Update Student</h2>
+          <h2>Update Room</h2>
           <div className="box-crud">
             <label>Name</label>
             <input type="text" placeholder="Enter Name"
             onChange={e=> setName(e.target.value)} />
           </div>
           <div className="box-crud">
-            <label>Email</label>
-            <input type="email" placeholder="Enter Email" 
-                onChange={e=> setEmail(e.target.value)}
-            />
-          </div>
-          <div className="box-crud">
-            <label>Class</label>
-            <input type="text" placeholder="Enter Class" 
-                onChange={e=> setClassname(e.target.value)}
+            <label>Room</label>
+            <input type="text" placeholder="Enter Room" 
+                onChange={e=> setInfor(e.target.value)}
             />
           </div>
           <button type="submit" className="btn-submit"  >
@@ -58,4 +50,4 @@ function UpdateStudent() {
     </div>
   );
 }
-export default UpdateStudent;
+export default UpdateRoom;

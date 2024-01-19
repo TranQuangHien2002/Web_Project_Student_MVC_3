@@ -1,0 +1,51 @@
+.container-room {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+.box-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  background-color: #10525b;
+  width: 100%;
+  overflow: auto;
+  height: 680px;
+  padding: 0 30px;
+}
+
+.box {
+  flex: 0 0 calc(20% - 20px);
+  border: 1px solid black;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  background-color: white;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.box h2,
+.box p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.box:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+  background-color: #4caf50
+}
+.btn-delete:hover,
+.btn-add:hover,
+.btn-edit:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+.btn-edit:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}

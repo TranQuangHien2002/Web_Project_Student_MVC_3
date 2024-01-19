@@ -4,7 +4,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Validation from "../components/SignupValidation";
-import "../styles/Signup.css";
+import "../styles/signup.css";
 
 function Signup() {
   const [values, setValues] = useState({
@@ -25,7 +25,7 @@ function Signup() {
     event.preventDefault();
     setErrors(Validation(values));
     if(errors.name === "" && errors.email === "" && errors.password === ""){
-      axios.post("http://localhost:8082/api/signup",values)
+      axios.post("http://localhost:8082/api/logins/signup",values)
       .then((res)=>{
         navigate("/");
       })

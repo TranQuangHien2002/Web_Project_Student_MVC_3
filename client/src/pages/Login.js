@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Validation from "../components/LoginValidation";
-import "../styles/Login.css";
+import "../styles/login.css";
 
 
 function Login() {
@@ -13,6 +13,8 @@ function Login() {
     password: "",
   });
   const [errors, setErrors] = useState({});
+  // const [userId, setUserId] = useState(null); 
+
   const navigate = useNavigate();
   const handleInput = (event) => {
     setValues((prev) => ({ ...prev, [event.target.name]: event.target.value }));
@@ -23,9 +25,12 @@ function Login() {
     setErrors(Validation(values));
     if (errors.email === "" && errors.password === "") {
       axios
-        .post("http://localhost:8082/api/login", values)
+        .post("http://localhost:8082/api/logins/login", values)
         .then((res) => {
-          if (res.data === "Success") {
+          if (res.data.status === "Success") {
+            // setUserId(res.data.userId);
+            localStorage.setItem('userId', res.data.userId); 
+            console.log(res.data.userId);
             navigate("/home");
           } else {
             alert("No record exist");
@@ -36,6 +41,7 @@ function Login() {
         });
     }
   };
+ 
   return (
     <div className="container_login">
       <div className="Login">

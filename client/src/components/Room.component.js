@@ -7,8 +7,9 @@ import "../styles/student.css";
 function Class() {
   const [room, setRoom] = useState([]);
   useEffect(() => {
+    const userId = localStorage.getItem('userId');
     axios
-      .get("http://localhost:8082/api/rooms")
+      .get(`http://localhost:8082/api/rooms/${userId}`)
       .then((res) => {
         setRoom(res.data);
       })

@@ -11,12 +11,14 @@ function CreateRoom() {
 
   function handleSubmit(event) {
     event.preventDefault();
+    const userId = localStorage.getItem('userId');
     const newRoom = {
       name,
       infor,
+      ID : userId,
     };
     axios
-      .post("http://localhost:8082/api/rooms/create", newRoom)
+      .post(`http://localhost:8082/api/rooms/create/${userId}`, newRoom)
       .then((res) => {
         console.log("success");
         navigate("/home");

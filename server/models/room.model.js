@@ -73,5 +73,28 @@ Room.remove = (id_room, result) => {
         result(null, res);
     });
 }
+Room.getByUserId = (userId, result) => {
+    sql.query("SELECT * FROM room WHERE id = ?", [userId], (err, res) => {
+        if (err) {
+            console.log("error: ", err);
+            result(null, err);
+            return;
+        }
+        console.log("rooms: ", res);
+        result(null, res);
+    });
+};
+Room.createWithUserId = (newRoom, userId, result) => {
+    newRoom.ID = parseInt(userId);
+    sql.query("INSERT INTO room SET ?", newRoom, (err, res) => {
+        if (err) {
+            console.log("error: ", err);
+            result(err, null);
+            return;
+        }
+        console.log("created room: ", { id_room: res.insertId, ...newRoom });
+        result(null, { id_room: res.insertId, ...newRoom });
+    });
+};
 module.exports = Room;
 

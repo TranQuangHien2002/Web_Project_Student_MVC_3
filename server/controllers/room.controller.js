@@ -40,5 +40,32 @@ exports.deleteRoom = (req, res) => {
         } else res.send({ message: `Room was deleted successfully!` });
     });
 }
+
+exports.getByUserId = (req, res) => {
+    Room.getByUserId(req.params.userId, (err, data) => {
+        if (err) {
+            if (err.kind === "not_found") {
+                res.status(404).send({
+                    message: `Not found Room with id ${req.params.userId}.`
+                });
+            } else {
+                res.status(500).send({
+                    message: "Error retrieving Room with id " + req.params.userId
+                });
+            }
+        } else res.send(data);
+    });
+};
+exports.createRoomWithUserId = (req, res) => {
+    const room = new Room({
+        name: req.body.name,
+        info: req.body.info,
+    });
+
+    Room.createWithUserId(room, req.params.userId, (err, data) => {
+        if (err) res.status(500).send({ message: err.message || "Some error occurred while creating the Room." });
+        else res.send(data);
+    });
+};
 module.exports = exports;
 

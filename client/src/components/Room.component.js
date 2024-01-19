@@ -25,12 +25,16 @@ function Class() {
       console.log(err);
     }
   };
+  const handleClick = (id) => {
+    console.log("Room ID: ", id);
+     localStorage.setItem('roomID', id);
+  };
   return (
     <div>
       <div className="container-room">
         <div className="box-container">
           {room.map((data, index) => (
-            <div className="box" key={index}>
+           <div className="box" key={index} onClick={() => handleClick(data.ID_room)}>
             <Link to="/about" key={index} style={{textDecoration:"none"}}>
               <img
                 src={boloImage}

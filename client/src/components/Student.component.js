@@ -6,9 +6,10 @@ function Student() {
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
-    const userId = localStorage.getItem('userId');
+    // const userId = localStorage.getItem('userId');
+    let roomID = localStorage.getItem('roomID');
     axios
-      .get(`http://localhost:8082/api/students/${userId}`)
+      .get(`http://localhost:8082/api/students/${roomID}`)
       .then((res) => {
         setStudents(res.data);
       })

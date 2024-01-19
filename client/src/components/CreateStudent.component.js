@@ -12,15 +12,16 @@ function CreateStudent() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    const userId = localStorage.getItem('userId');
+    // const userId = localStorage.getItem('userId');
+    const roomID = localStorage.getItem('roomID');
     const newStudent = {
       name,
       email,
       classname,
-      ID : userId,
+      ID : roomID,
     };
     axios
-      .post(`http://localhost:8082/api/students/create/${userId}`, newStudent)
+      .post(`http://localhost:8082/api/students/create/${roomID}`, newStudent)
       .then((res) => {
         console.log("success");
         navigate("/about");

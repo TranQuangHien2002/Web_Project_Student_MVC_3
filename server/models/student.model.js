@@ -71,8 +71,8 @@ Student.remove = (id_student, result) => {
         result(null, res);
     });
 };
-Student.getByUserId = (userId, result) => {
-    sql.query("SELECT * FROM student WHERE id = ?", [userId], (err, res) => {
+Student.getByRoomId = (roomId, result) => {
+    sql.query("SELECT * FROM student WHERE id = ?", [roomId], (err, res) => {
         if (err) {
             console.log("error: ", err);
             result(null, err);
@@ -82,8 +82,9 @@ Student.getByUserId = (userId, result) => {
         result(null, res);
     });
 };
-Student.createWithUserId = (newStudent, userId, result) => {
-    newStudent.ID = parseInt(userId);
+
+Student.createWithRoomId = (newStudent, roomId, result) => {
+    newStudent.ID = parseInt(roomId);
     sql.query("INSERT INTO student SET ?", newStudent, (err, res) => {
         if (err) {
             console.log("error: ", err);

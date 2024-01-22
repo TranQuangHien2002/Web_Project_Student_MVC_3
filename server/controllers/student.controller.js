@@ -42,29 +42,30 @@ exports.deleteStudent = (req, res) => {
         } else res.send({ message: `Student was deleted successfully!` });
     });
 };
-exports.getByUserId = (req, res) => {
-    Student.getByUserId(req.params.userId, (err, data) => {
+
+exports.getByRoomId = (req, res) => {
+    Student.getByRoomId(req.params.roomId, (err, data) => {
         if (err) {
             if (err.kind === "not_found") {
                 res.status(404).send({
-                    message: `Not found Student with id ${req.params.userId}.`
+                    message: `Not found Student with id ${req.params.roomId}.`
                 });
             } else {
                 res.status(500).send({
-                    message: "Error retrieving Student with id " + req.params.userId
+                    message: "Error retrieving Student with id " + req.params.roomId
                 });
             }
         } else res.send(data);
     });
 };
-exports.createStudentWithUserId = (req, res) => {
+exports.createStudentWithRoomId = (req, res) => {
     const student = new Student({
         name: req.body.name,
         email: req.body.email,
         classname: req.body.classname,
     });
 
-    Student.createWithUserId(student, req.params.userId, (err, data) => {
+    Student.createWithRoomId(student, req.params.roomId, (err, data) => {
         if (err) res.status(500).send({ message: err.message || "Some error occurred while creating the Student." });
         else res.send(data);
     });

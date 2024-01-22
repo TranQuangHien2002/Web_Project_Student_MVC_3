@@ -91,7 +91,6 @@ Student.createWithRoomId = (newStudent, roomId, result) => {
             result(err, null);
             return;
         }
-
         console.log("created student: ", { id_student: res.insertId, ...newStudent });
         result(null, { id_student: res.insertId, ...newStudent });
     });

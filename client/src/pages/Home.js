@@ -9,7 +9,7 @@ import CreateRoom from "../components/CreateRoom.component";
 
 function Home() {
   const [isToolbarVisible, setToolbarVisible] = useState(false);
-
+  const userName = localStorage.getItem('userName');
   const handleUsernameClick = () => {
     setToolbarVisible(!isToolbarVisible);
   };
@@ -32,7 +32,7 @@ function Home() {
           <input type="text" placeholder="Search.." />
         </div>
         <div className="username-display" onClick={handleUsernameClick}>
-          <p>UserName &#9776;</p>
+          <p>{userName} &#9776;</p>
           {isToolbarVisible && (
             <div className="toolbar">
               <ul>

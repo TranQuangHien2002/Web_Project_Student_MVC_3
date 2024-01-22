@@ -61,7 +61,7 @@ function CreateRoom() {
               />
             </div>
             <div className="box-crud">
-              <label>Room</label>
+              <label>Room infor</label>
               <input
                 type="text"
                 placeholder="Enter Room"

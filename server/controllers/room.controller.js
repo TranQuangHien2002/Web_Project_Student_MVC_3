@@ -59,7 +59,7 @@ exports.getByUserId = (req, res) => {
 exports.createRoomWithUserId = (req, res) => {
     const room = new Room({
         name: req.body.name,
-        info: req.body.info,
+        infor: req.body.infor,
     });
 
     Room.createWithUserId(room, req.params.userId, (err, data) => {

@@ -30,7 +30,9 @@ function Login() {
           if (res.data.status === "Success") {
             // setUserId(res.data.userId);
             localStorage.setItem('userId', res.data.userId); 
+            localStorage.setItem('userName', res.data.userName); 
             console.log(res.data.userId);
+            console.log(res.data.userName);
             navigate("/home");
           } else {
             alert("No record exist");

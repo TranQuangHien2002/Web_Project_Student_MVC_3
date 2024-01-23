@@ -1,22 +1,2 @@
-# khoi tao project:
-
-tạo floder server
-
-cd server
-
-npm init -y
-
-npm install mysql express
-
-
----------------------
-cd floder "name project"
-
-npx create-react-app client
-
-cd client
-
-npm start
-
-
-![cau truc project](https://github.com/TranQuangHien2002/WEB_Student/assets/121622041/f5525786-44e1-48f9-9d14-49ff3c92770a)
+# EER Diagram
+![image](https://github.com/TranQuangHien2002/Web_Project_Student_MVC_3/assets/121622041/782def2d-3d14-464d-b380-b8f8e2a4ad11)

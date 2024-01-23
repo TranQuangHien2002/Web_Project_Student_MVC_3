@@ -5,8 +5,7 @@ import About from "./About";
 import Room from "../components/Room.component";
 import UpdateRoom from "../components/UpdateRoom.component";
 import CreateRoom from "../components/CreateRoom.component";
-
-
+import "../styles/home.css";
 function Home() {
   const [isToolbarVisible, setToolbarVisible] = useState(false);
   const userName = localStorage.getItem('userName');
@@ -14,12 +13,11 @@ function Home() {
     setToolbarVisible(!isToolbarVisible);
   };
 
-
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="home-container">
+      <header className="home-header">
         <nav>
-          <ul>
+          <ul className="home-nav-list">
             <li>
               <Link to="/home">Home</Link>
             </li>
@@ -28,14 +26,14 @@ function Home() {
             </li>
           </ul>
         </nav>
-        <div className="search-container">
-          <input type="text" placeholder="Search.." />
+        <div className="home-search-container">
+          <input type="text" placeholder="Search.." className="home-search-input"/>
         </div>
-        <div className="username-display" onClick={handleUsernameClick}>
-          <p>{userName} &#9776;</p>
+        <div className="home-username-display" onClick={handleUsernameClick}>
+          <p className="home-username-text">{userName} &#9776;</p>
           {isToolbarVisible && (
-            <div className="toolbar">
-              <ul>
+            <div className="home-toolbar">
+              <ul className="home-toolbar-list">
                 <li >
                   <Link to="/account-info">View Account </Link>
                 </li>
@@ -54,8 +52,8 @@ function Home() {
         <Route path="/create/room" element={<CreateRoom />} />
         <Route path="/update/room/:id" element={<UpdateRoom />} />
       </Routes>
-      <footer className="App-footer">
-        <p className="text-footer-header">© 2024 My Website</p>
+      <footer className="home-footer">
+        <p className="home-footer-text">© 2024 My Website</p>
       </footer>
     </div>
   );

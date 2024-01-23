@@ -4,6 +4,8 @@ import Student from "../components/Student.component";
 import CreateStudent from "../components/CreateStudent.component";
 import UpdateStudent from "../components/UpdateStudent.component";
 import { useState } from "react";
+import "../styles/about.css";
+
 function About() {
   const [isToolbarVisible, setToolbarVisible] = useState(false);
   const [isSubMenuVisible, setSubMenuVisible] = useState(false);
@@ -15,11 +17,12 @@ function About() {
   const handleSubMenuClick = () => {
     setSubMenuVisible(!isSubMenuVisible);
   };
+
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="about-container">
+      <header className="about-header">
         <nav>
-          <ul>
+          <ul className="about-nav-list">
             <li>
               <Link to="/home">Home</Link>
             </li>
@@ -28,19 +31,18 @@ function About() {
             </li>
           </ul>
         </nav>
-        <div className="search-container">
-          <input type="text" placeholder="Search.." />
+        <div className="about-search-container">
+          <input type="text" placeholder="Search.." className="about-search-input"/>
         </div>
-      
-        <div className="username-display" onClick={handleUsernameClick}>
-          <p>UserName   &#9776;</p>
+        <div className="about-username-display" onClick={handleUsernameClick}>
+          <p className="about-username-text">UserName   &#9776;</p>
           {isToolbarVisible && (
-            <div className="toolbar">
-              <ul>
+            <div className="about-toolbar">
+              <ul className="about-toolbar-list">
                 <li onClick={handleSubMenuClick}>
                   <Link to="/account-info">View Account </Link>
                   {isSubMenuVisible && (
-                    <ul>
+                    <ul className="about-submenu-list">
                       <li>
                         <Link to="/sub-menu-item-1">Sub Menu Item 1</Link>
                       </li>
@@ -63,8 +65,8 @@ function About() {
         <Route path="/create" element={<CreateStudent />} />
         <Route path="/update/:id" element={<UpdateStudent />} />
       </Routes>
-      <footer className="App-footer">
-      <p>© 2024 My Website</p>
+      <footer className="about-footer">
+        <p className="about-footer-text">© 2024 My Website</p>
       </footer>
     </div>
   );

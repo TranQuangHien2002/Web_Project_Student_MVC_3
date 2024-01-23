@@ -1,4 +1,4 @@
-.container_signup {
+.signup-container {
   margin: 0;
   padding: 0;
   background: url("../asset/login.jpg") no-repeat center center fixed;
@@ -9,7 +9,7 @@
   align-items: center;
 }
 
-.Signup {
+.signup-form-container {
   width: 300px;
   margin: 0 auto;
   padding: 20px;
@@ -18,29 +18,29 @@
   background-color: rgba(248, 248, 248, 0.8);
 }
 
-.Signup h1 {
+.signup-form-container h1 {
   text-align: center;
   color: #333;
 }
 
-.Signup form {
+.signup-form-container form {
   display: flex;
   flex-direction: column;
 }
 
-.Signup label {
+.signup-form-container label {
   margin-top: 10px;
 }
 
-.Signup input[type="text"],
-input[type="email"],
-input[type="password"] {
+.signup-input-name,
+.signup-input-email,
+.signup-input-password {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-.Signup button {
+.signup-submit-button {
   margin-top: 10px;
   padding: 10px;
   border: none;
@@ -50,22 +50,24 @@ input[type="password"] {
   cursor: pointer;
 }
 
-.Signup button:hover {
+.signup-submit-button:hover {
   background-color: #0056b3;
 }
 
-.Signup btn-signup {
+.signup-signin-link {
   display: inline-block;
   margin-top: 10px;
   color: #007bff;
   text-decoration: none;
 }
 
-.Signup btn-signup:hover {
+.signup-signin-link:hover {
   text-decoration: underline;
 }
 
-.Signup span {
+.signup-error-name,
+.signup-error-email,
+.signup-error-password {
   color: red;
   font-size: 12px;
 }

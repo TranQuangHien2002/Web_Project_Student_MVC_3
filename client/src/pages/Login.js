@@ -6,14 +6,12 @@ import { useNavigate } from "react-router-dom";
 import Validation from "../components/LoginValidation";
 import "../styles/login.css";
 
-
 function Login() {
   const [values, setValues] = useState({
     email: "",
     password: "",
   });
   const [errors, setErrors] = useState({});
-  // const [userId, setUserId] = useState(null); 
 
   const navigate = useNavigate();
   const handleInput = (event) => {
@@ -28,7 +26,6 @@ function Login() {
         .post("http://localhost:8082/api/logins/login", values)
         .then((res) => {
           if (res.data.status === "Success") {
-            // setUserId(res.data.userId);
             localStorage.setItem('userId', res.data.userId); 
             localStorage.setItem('userName', res.data.userName); 
             console.log(res.data.userId);
@@ -45,8 +42,8 @@ function Login() {
   };
  
   return (
-    <div className="container_login">
-      <div className="Login">
+    <div className="login-container">
+      <div className="login-form-container">
         <h1>Sign in</h1>
         <form>
           <label>Email</label>
@@ -55,26 +52,27 @@ function Login() {
             placeholder="Enter Email"
             name="email"
             onChange={handleInput}
+            className="login-input-email"
           />
-          <span>{errors.email && <span>{errors.email}</span>}</span>
+          <span>{errors.email && <span className="login-error-email">{errors.email}</span>}</span>
           <label>Password</label>
           <input
             type="password"
             placeholder="Enter Password"
             name="password"
             onChange={handleInput}
+            className="login-input-password"
           />
-          <span>{errors.password && <span>{errors.password}</span>}</span>
-          <button type="submit" onClick={handleSubmit}>
+          <span>{errors.password && <span className="login-error-password">{errors.password}</span>}</span>
+          <button type="submit" onClick={handleSubmit} className="login-submit-button">
             Login
           </button>
-          <Link to="/signup" className="btn-signup">
+          <Link to="/signup" className="login-signup-link">
             Sign Up
           </Link>
         </form>
       </div>
     </div>
-
   );
 }
 

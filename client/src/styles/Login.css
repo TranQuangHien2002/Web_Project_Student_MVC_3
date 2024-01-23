@@ -1,4 +1,4 @@
-.container_login {
+.login-container {
   margin: 0;
   padding: 0;
   background: url("../asset/login.jpg") no-repeat center center fixed;
@@ -9,7 +9,7 @@
   align-items: center;
 }
 
-.Login {
+.login-form-container {
   width: 300px;
   margin: 0 auto;
   padding: 20px;
@@ -18,28 +18,28 @@
   background-color: rgba(248, 248, 248, 0.8);
 }
 
-.Login h1 {
+.login-form-container h1 {
   text-align: center;
   color: #333;
 }
 
-.Login form {
+.login-form-container form {
   display: flex;
   flex-direction: column;
 }
 
-.Login label {
+.login-form-container label {
   margin-top: 10px;
 }
 
-.Login input[type="email"],
-.Login input[type="password"] {
+.login-input-email,
+.login-input-password {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-.Login button {
+.login-submit-button {
   margin-top: 10px;
   padding: 10px;
   border: none;
@@ -49,22 +49,23 @@
   cursor: pointer;
 }
 
-.Login button:hover {
+.login-submit-button:hover {
   background-color: #0056b3;
 }
 
-.Login .btn-signup {
+.login-signup-link {
   display: inline-block;
   margin-top: 10px;
   color: #007bff;
   text-decoration: none;
 }
 
-.Login .btn-signup:hover {
+.login-signup-link:hover {
   text-decoration: underline;
 }
 
-.Login span {
+.login-error-email,
+.login-error-password {
   color: red;
   font-size: 12px;
 }

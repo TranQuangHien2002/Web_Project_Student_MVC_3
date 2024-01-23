@@ -1,0 +1,122 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.about-header {
+  background-color: #161757;
+  padding: 20px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.about-header nav ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0px 60px;
+  padding: 0;
+}
+
+.about-header nav ul li {
+  float: none;
+}
+
+.about-header nav ul li a {
+  display: flex;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.about-footer {
+  background-color: #161757;
+  padding: 20px;
+  color: white;
+  margin-top: auto;
+  width: 100%;
+}
+
+.about-header .about-search-container {
+  margin-left: auto;
+}
+
+.about-header .about-search-container input[type="text"] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.about-header .about-username-display {
+  margin-left: 40px;
+  color: white;
+  margin-right: 100px;
+  cursor: pointer;
+}
+
+.about-header .about-search-container,
+.about-header .about-username-display {
+  display: flex;
+  align-items: center;
+}
+
+.about-username-display {
+  position: relative;
+}
+
+.about-toolbar {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  margin-right: 50px;
+}
+
+.about-toolbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.about-toolbar ul li {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.about-toolbar ul li:hover {
+  background-color: #ddd;
+}
+
+.about-toolbar ul li ul {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  min-width: 160px;
+}
+
+.about-toolbar ul li:hover ul {
+  display: block;
+}
+
+.about-toolbar ul li a {
+  text-decoration: none;
+  border-bottom: none;
+}

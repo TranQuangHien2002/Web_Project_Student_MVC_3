@@ -35,9 +35,9 @@ function Signup() {
     }
   };
   return (
-    <div className="container_signup">
-       <div className="Signup">
-      <h1>Sign Up</h1>
+    <div className="signup-container">
+       <div className="signup-form-container">
+      <h1>Signup</h1>
       <form action="" onSubmit={handleSubmit}>
         <label>Name</label>
         <input
@@ -45,28 +45,31 @@ function Signup() {
           placeholder="Enter Name"
           name="name"
           onChange={handleInput}
+          className="signup-input-name"
         />
-        <span>{errors.name && <span>{errors.name}</span>}</span>
+        <span>{errors.name && <span className="signup-error-name">{errors.name}</span>}</span>
         <label>Email</label>
         <input
           type="email"
           placeholder="Enter Email"
           name="email"
           onChange={handleInput}
+          className="signup-input-email"
         />
-        <span>{errors.email && <span>{errors.email}</span>}</span>
+        <span>{errors.email && <span className="signup-error-email">{errors.email}</span>}</span>
         <label>Password</label>
         <input
           type="password"
           placeholder="Enter Password"
           name="password"
           onChange={handleInput}
+          className="signup-input-password"
         />
-        <span>{errors.password && <span>{errors.password}</span>}</span>
-        <button type="submit" onClick={handleSubmit}>
+        <span>{errors.password && <span className="signup-error-password">{errors.password}</span>}</span>
+        <button type="submit" onClick={handleSubmit} className="signup-submit-button">
           Create Account
         </button>
-        <Link to="/" className="btn-signup">
+        <Link to="/" className="signup-signin-link">
           Sign In
         </Link>
       </form>

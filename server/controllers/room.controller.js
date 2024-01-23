@@ -67,5 +67,23 @@ exports.createRoomWithUserId = (req, res) => {
         else res.send(data);
     });
 };
+
+exports.getRoomById = (req, res) => {
+    const id_room = req.params.id;
+
+    Room.findById(id_room, (err, data) => {
+        if (err) {
+            if (err.kind === "not_found") {
+                res.status(404).send({
+                    message: `Not found Room with id_room ${id_room}.`
+                });
+            } else {
+                res.status(500).send({
+                    message: "Error retrieving Room with id_room " + id_room
+                });
+            }
+        } else res.send(data);
+    });
+};
 module.exports = exports;
 

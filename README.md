@@ -1,24 +1,44 @@
 project-root/
+
 |-- client/                 # Thư mục chứa mã nguồn frontend (React)
+
 |   |-- public/             # Thư mục chứa các tệp tĩnh không biên dịch
+
 |   |-- src/                # Thư mục chứa mã nguồn React
+
 |       |-- components/     # Thư mục chứa các thành phần React
+
 |       |-- pages/          # Thư mục chứa các trang của ứng dụng
+
 |       |-- App.js          # Nơi khởi tạo và định tuyến các thành phần
+
 |       |-- index.js        # Nơi gọi ReactDOM.render
+
 |       |-- ...             # Các tệp khác liên quan đến mã nguồn React
+
 |-- server/                 # Thư mục chứa mã nguồn backend (Node.js)
+
 |   |-- routes/             # Thư mục chứa các tệp định tuyến của API
+
 |   |-- controllers/        # Thư mục chứa các controllers xử lý yêu cầu
+
 |   |-- models/             # Thư mục chứa các định nghĩa mô hình cơ sở dữ liệu
+
 |   |-- config/             # Thư mục chứa các tệp cấu hình 
+
 |   
 |-- db/                     # Thư mục chứa các tệp liên quan đến cơ sở dữ liệu
+
 |-- server.js               # Tệp khởi tạo server   
+
 |   
+
 |-- .gitignore             
+
 |-- package.json            
+
 |-- README.md              
+
 
 # EER Diagram
 ![image](https://github.com/TranQuangHien2002/Web_Project_Student_MVC_3/assets/121622041/782def2d-3d14-464d-b380-b8f8e2a4ad11)

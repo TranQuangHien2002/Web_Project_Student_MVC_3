@@ -17,7 +17,8 @@
 ![image](https://github.com/TranQuangHien2002/Web_Project_Student_MVC_3/assets/121622041/d9e10684-b61b-4b69-941a-6cd77b239369)
 
 # màn hình mystudent
-![image](https://github.com/TranQuangHien2002/Web_Project_Student_MVC_3/assets/121622041/683fe789-541f-433b-b2fc-f7b56711af13)
+![image](https://github.com/TranQuangHien2002/Web_Project_Student_MVC_3/assets/121622041/e74991d1-0885-4b19-ab5d-45e514376228)
+
 
 # màn hình add student
 ![image](https://github.com/TranQuangHien2002/Web_Project_Student_MVC_3/assets/121622041/7b0ee065-4127-45ea-a449-bad709ac74d7)

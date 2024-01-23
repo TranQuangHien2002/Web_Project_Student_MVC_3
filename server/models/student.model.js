@@ -7,92 +7,45 @@ const Student = function(student) {
     this.classname = student.classname;
 };
 
-Student.getAll = result => {
-    sql.query("SELECT * FROM student ", (err, res) => {
-        if (err) {
-            console.log("error: ", err);
-            result(null, err);
-            return;
-        }
-
-        console.log("students: ", res);
-        result(null, res);
-    });
-};
-
-Student.create = (newStudent, result) => {
-    sql.query("INSERT INTO student SET ?", newStudent, (err, res) => {
+const executeQuery = (query, params, result) => {
+    sql.query(query, params, (err, res) => {
         if (err) {
             console.log("error: ", err);
             result(err, null);
             return;
         }
-
-        console.log("created student: ", { id_student: res.insertId, ...newStudent });
-        result(null, { id_student: res.insertId, ...newStudent });
+        console.log("students: ", res);
+        result(null, res);
     });
 };
 
+Student.getAll = result => {
+    executeQuery("SELECT * FROM student ", [], result);
+};
+
+Student.create = (newStudent, result) => {
+    executeQuery("INSERT INTO student SET ?", newStudent, result);
+};
+
 Student.updateById = (id_student, student, result) => {
-    sql.query(
+    executeQuery(
         "UPDATE student SET name = ?, email = ?, classname = ? WHERE id_student = ?",
         [student.name, student.email, student.classname, id_student],
-        (err, res) => {
-            if (err) {
-                console.log("error: ", err);
-                result(null, err);
-                return;
-            }
-
-            if (res.affectedRows == 0) {
-                result({ kind: "not_found" }, null);
-                return;
-            }
-            console.log("updated student: ", { id_student: id_student, ...student });
-            result(null, { id_student: id_student, ...student });
-        }
+        result
     );
 };
 
 Student.remove = (id_student, result) => {
-    sql.query("DELETE FROM student WHERE id_student = ?", id_student, (err, res) => {
-        if (err) {
-            console.log("error: ", err);
-            result(null, err);
-            return;
-        }
-
-        if (res.affectedRows == 0) {
-            result({ kind: "not_found" }, null);
-            return;
-        }
-
-        console.log("deleted student with id_student: ", id_student);
-        result(null, res);
-    });
+    executeQuery("DELETE FROM student WHERE id_student = ?", id_student, result);
 };
+
 Student.getByRoomId = (roomId, result) => {
-    sql.query("SELECT * FROM student WHERE id = ?", [roomId], (err, res) => {
-        if (err) {
-            console.log("error: ", err);
-            result(null, err);
-            return;
-        }
-        console.log("students: ", res);
-        result(null, res);
-    });
+    executeQuery("SELECT * FROM student WHERE id = ?", [roomId], result);
 };
 
 Student.createWithRoomId = (newStudent, roomId, result) => {
     newStudent.ID = parseInt(roomId);
-    sql.query("INSERT INTO student SET ?", newStudent, (err, res) => {
-        if (err) {
-            console.log("error: ", err);
-            result(err, null);
-            return;
-        }
-        console.log("created student: ", { id_student: res.insertId, ...newStudent });
-        result(null, { id_student: res.insertId, ...newStudent });
-    });
+    executeQuery("INSERT INTO student SET ?", newStudent, result);
 };
+
 module.exports = Student;

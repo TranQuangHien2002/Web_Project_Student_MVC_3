@@ -9,6 +9,7 @@ import "../styles/about.css";
 function About() {
   const [isToolbarVisible, setToolbarVisible] = useState(false);
   const [isSubMenuVisible, setSubMenuVisible] = useState(false);
+  const userName = localStorage.getItem('userName');
 
   const handleUsernameClick = () => {
     setToolbarVisible(!isToolbarVisible);
@@ -17,7 +18,6 @@ function About() {
   const handleSubMenuClick = () => {
     setSubMenuVisible(!isSubMenuVisible);
   };
-
   return (
     <div className="about-container">
       <header className="about-header">
@@ -35,7 +35,7 @@ function About() {
           <input type="text" placeholder="Search.." className="about-search-input"/>
         </div>
         <div className="about-username-display" onClick={handleUsernameClick}>
-          <p className="about-username-text">UserName   &#9776;</p>
+         <p className="home-username-text">{userName} &#9776;</p>
           {isToolbarVisible && (
             <div className="about-toolbar">
               <ul className="about-toolbar-list">

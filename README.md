@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 
 # EER Diagram
 ![image](https://github.com/TranQuangHien2002/Web_Project_Student_MVC_3/assets/121622041/782def2d-3d14-464d-b380-b8f8e2a4ad11)
@@ -30,4 +28,3 @@
 ![image](https://github.com/TranQuangHien2002/Web_Project_Student_MVC_3/assets/121622041/507dafbc-c1a1-4696-b92d-d1550c3cddf6)
 
 
->>>>>>> 25e274de52839f89cc2c8317d5b25c5ded7d20ce

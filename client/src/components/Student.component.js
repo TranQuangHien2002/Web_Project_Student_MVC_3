@@ -32,6 +32,11 @@ function Student() {
     localStorage.setItem("student", JSON.stringify(student));
     navigate(`/about/update/${student.ID_student}`);
   }
+  // dùng cho chức năng xem chi tiết sinh viên
+  function handleStudentClick(student) {
+    localStorage.setItem("selectedStudent", JSON.stringify(student));
+    navigate(`/student/${student.ID_student}`);
+  }
   return (
     <div className="container">
       <Link to="/create" className="btn-add">
@@ -47,10 +52,10 @@ function Student() {
               <th>Action</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody> 
             {students.map((data, index) => (
-              <tr key={index}>
-                <td>{data.name}</td>
+              <tr key={index}>  
+                <td onClick={() => handleStudentClick(data)}>{data.name}</td>  {/* dùng cho chức năng xem chi tiết sinh viên */}
                 <td>{data.email}</td>
                 <td>{data.classname}</td>
                 <td>

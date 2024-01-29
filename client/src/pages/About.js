@@ -14,10 +14,10 @@ function About() {
   const handleUsernameClick = () => {
     setToolbarVisible(!isToolbarVisible);
   };
-
   const handleSubMenuClick = () => {
     setSubMenuVisible(!isSubMenuVisible);
   };
+
   return (
     <div className="about-container">
       <header className="about-header">
@@ -71,5 +71,4 @@ function About() {
     </div>
   );
 }
-
 export default About;

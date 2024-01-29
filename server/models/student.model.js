@@ -47,5 +47,10 @@ Student.createWithRoomId = (newStudent, roomId, result) => {
     newStudent.ID = parseInt(roomId);
     executeQuery("INSERT INTO student SET ?", newStudent, result);
 };
+// lấy thông tin sinh viên theo id
+Student.getById = (id_student, result) => {
+    executeQuery("SELECT * FROM student WHERE id_student = ?", [id_student], result);
+};
+
 
 module.exports = Student;

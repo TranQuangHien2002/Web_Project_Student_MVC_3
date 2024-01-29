@@ -11,6 +11,7 @@ import UpdateStudent from "./components/UpdateStudent.component";
 import Room from "./components/Room.component";
 import CreateRoom from "./components/CreateRoom.component";
 import UpdateRoom from "./components/UpdateRoom.component";
+import StudentDetail from "./components/StudentDetail";
 function App() {
   return (
     <Router>
@@ -26,6 +27,7 @@ function App() {
           <Route path="/" element={<Room />} />
           <Route path="/create/room" element={<CreateRoom />} />
           <Route path="/update/room/:id" element={<UpdateRoom />} />
+          <Route path="/student/:id" element={<StudentDetail />} /> {/* dùng cho chức năng xem chi tiết sinh viên */}
         </Routes>
       </div>
     </Router>

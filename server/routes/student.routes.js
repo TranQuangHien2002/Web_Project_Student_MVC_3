@@ -10,5 +10,7 @@ router.post("/create/:roomId", studentController.createStudentWithRoomId);
 router.post("/create", studentController.createStudent);
 router.put("/update/:id", studentController.updateStudent);
 router.delete("/:id", studentController.deleteStudent);
+// lấy thông tin sinh viên theo id
+router.get('/api/students/:id', studentController.getStudentById);
 
 module.exports = router;

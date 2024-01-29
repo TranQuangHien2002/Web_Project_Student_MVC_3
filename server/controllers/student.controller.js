@@ -65,5 +65,16 @@ exports.createStudentWithRoomId = (req, res) => {
         handleResponse(err, data, res, { default: "Some error occurred while creating the Student." });
     });
 };
+// lấy thông tin sinh viên theo id
+exports.getStudentById = (req, res) => {
+    const id_student = req.params.id;
+
+    Student.getById(id_student, (err, data) => {
+        handleResponse(err, data, res, { 
+            notFound: `Not found Student with id_student ${id_student}.`, 
+            default: `Error retrieving Student with id_student ${id_student}` 
+        });
+    });
+};
 
 module.exports = exports;
